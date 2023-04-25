@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+  p Join the Club! Enter the #[em secret] Code!
+  form(method='POST', action='')
+    label(for="member_code")
+    input(name="member_code" type='text')
+    button(type='submit') Become a member
+
+  if errors   
+    ul 
+      for error in errors 
+        li!=error.msg

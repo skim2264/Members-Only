@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  each message in messages 
+    div(class="msg_div")
+      p #[strong #{message.title}]
+      p #{message.text_message}
+      p #{message.timestamp}
+      if currentUser
+        p - #{message.author.username}
+        if currentUser.isAdmin
+          button(type="button") Delete
+

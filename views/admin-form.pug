@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+  p Become an Admin! Enter the secret #[em admin] Code
+  form(method='POST', action='')
+    label(for="admin_code")
+    input(name="admin_code" type='text')
+    button(type='submit') Become an admin
+
+  if errors   
+    ul 
+      for error in errors 
+        li!=error.msg

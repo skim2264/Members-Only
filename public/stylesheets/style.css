@@ -1,0 +1,27 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.msg_div {
+  background-color: grey;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 5px;
+}
+

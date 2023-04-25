@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block navbar 
+      nav 
+        a(href="/") Home
+        if currentUser
+          if !currentUser.isMember
+            a(href="/member") Become a member 
+          if !currentUser.isAdmin
+            a(href="/admin") Become an admin
+          a(href="/newMessage") Create a New Message
+          a(href="/logout") Logout
+        else
+          a(href="/login") Login
+          a(href="/sign-up") Sign Up
+        
+    block content
