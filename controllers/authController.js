@@ -11,20 +11,6 @@ exports.sign_up_get = asyncHandler(async (req, res, next) => {
 })
 
 exports.sign_up_post = [
-  body("first_name")
-    .trim()
-    .notEmpty()
-    .escape()
-    .withMessage("First name must be specified.")
-    .isAlpha()
-    .withMessage("First name has non-alpha characters."),
-  body("last_name")
-    .trim()
-    .notEmpty()
-    .escape()
-    .withMessage("Last name must be specified.")
-    .isAlpha()
-    .withMessage("Last name has non-alpha characters."),
   body("username")
     .trim()
     .isLength({min:6})
@@ -58,8 +44,6 @@ exports.sign_up_post = [
     bcrypt.hash(req.body.password, 10, async(err, hashedPassword)=> {
       if(err) {return next(err)};
       const user = new User({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
         username: req.body.username,
         password: hashedPassword
       });

@@ -56,7 +56,8 @@ exports.make_admin_post = [
         errors: errors.array()
       })
     } else {
-      await User.findByIdAndUpdate(userId, {isAdmin: true});
+      //automatically become a member if an admmin
+      await User.findByIdAndUpdate(userId, {isAdmin: true, isMember: true});
       res.redirect("/");
     }
   })
