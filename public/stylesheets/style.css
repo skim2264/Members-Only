@@ -1,27 +1,100 @@
 body {
-  padding: 50px;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightgrey;
+  margin: 0;
+  height: 100vh;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: white;
 }
 
 nav {
   display: flex;
-  gap: 10px;
+  background-color: #f96d00;
+  padding: 30px;
+  justify-content: space-between;
+  font-family: 'Monoton', cursive;
+  font-size: 16px;
 }
 
+.nav-right, .nav-mid {
+  display: flex;
+  gap: 15px;
+}
+
+/* Form styling */
 form {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.loginFormDiv, .signupFormDiv, .newMsgForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+/* Index.pug */
+.content {
+  padding: 50px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: normal;
+  font-family: 'Monoton', cursive;
+}
+
+.msgs_div {
+  display: flex;
+  gap: 10px;
   flex-direction: column;
 }
 
 .msg_div {
-  background-color: grey;
-  border-radius: 5px;
-  border: 1px solid grey;
-  padding: 10px;
+  padding: 20px;
   margin: 5px;
+  background-color: white;
+  box-shadow: 1px 1px black;
+  display: flex;
+  flex-direction: column;
 }
 
+.msg_title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.msg_text {
+  padding-left: 20px;
+}
+
+.msg_time {
+  font-family: 'Cutive Mono', monospace;
+}
+
+.msg_username {
+  align-self: flex-end;
+}
+
+.msg_div > button {
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+}
+
+.msg_div > button:hover {
+  cursor: grab;
+  text-decoration: none;
+}

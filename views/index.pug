@@ -1,15 +1,16 @@
 extends layout
 
 block content
-  h1= title
-
-  each message in messages 
-    div(class="msg_div")
-      p #[strong #{message.title}]
-      p #{message.text_message}
-      p #{message.timestamp}
-      if currentUser
-        p - #{message.author.username}
-        if currentUser.isAdmin
-          button(type="button") Delete
+  div(class="content")
+    h1(class="title")= title
+    div(class="msgs_div")
+      each message in messages 
+        div(class="msg_div")
+          p(class="msg_title") #{message.title}
+          p(class="msg_text") #{message.text_message}
+          p(class="msg_time") #{message.timestamp}
+          if currentUser && currentUser.isMember
+            p(class="msg_username") - #{message.author.username}
+            if currentUser.isAdmin
+              button(type="button") Delete
 

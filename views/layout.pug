@@ -3,19 +3,25 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Monoton&display=swap" rel="stylesheet")
   body
     block navbar 
-      nav 
-        a(href="/") Home
+      nav
+        div(class="nav-left")
+          a(href="/") Home
         if currentUser
-          if !currentUser.isMember
-            a(href="/member") Become a member 
-          if !currentUser.isAdmin
-            a(href="/admin") Become an admin
-          a(href="/newMessage") Create a New Message
-          a(href="/logout") Logout
+          div(class="nav-mid")
+            if !currentUser.isMember
+              a(href="/member") Become a member 
+            if !currentUser.isAdmin
+              a(href="/admin") Become an admin
+            a(href="/newMessage") Create a New Message
+            a(href="/logout") Logout
         else
-          a(href="/login") Login
-          a(href="/sign-up") Sign Up
+          div(class="nav-right")
+            a(href="/login") Login
+            a(href="/sign-up") Sign Up
         
     block content

@@ -1,16 +1,17 @@
 extends layout 
 
 block content 
-  h1=title 
+  div(class="newMsgForm")
+    h1=title 
 
-  form(method="POST" action='')
-    label(for="msg_title") Title:
-    input(name="msg_title", type="text" value=(message===undefined? '': message.title))
-    label(for="msg_text") Message: 
-    input(name="msg_text", type="textarea" value=(message===undefined? '': message.text_message))
-    button(type="submit") Create Message
+    form(method="POST" action='')
+      label(for="msg_title") Title:
+      input(name="msg_title", type="text" value=(message===undefined? '': message.title))
+      label(for="msg_text") Message: 
+      textarea(rows="10", name="msg_text", type="textarea" value=(message===undefined? '': message.text_message))
+      button(type="submit") Create Message
 
-  if errors   
-    ul 
-      for error in errors 
-        li!=error.msg
+    if errors   
+      ul 
+        for error in errors 
+          li!=error.msg
