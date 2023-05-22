@@ -88,13 +88,13 @@ form {
   align-self: flex-end;
 }
 
-.msg_div > button {
+.msg_div > form > button {
   background-color: white;
   border: none;
   text-decoration: underline;
 }
 
-.msg_div > button:hover {
+.msg_div > form > button:hover {
   cursor: grab;
   text-decoration: none;
 }

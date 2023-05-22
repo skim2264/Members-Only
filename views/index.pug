@@ -12,5 +12,7 @@ block content
           if currentUser && currentUser.isMember
             p(class="msg_username") - #{message.author.username}
             if currentUser.isAdmin
-              button(type="button") Delete
+              form(method="POST" action='')
+                input#messageId(type="hidden", name="messageId", value=message._id)
+                button(type="submit") Delete
 
