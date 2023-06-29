@@ -16,13 +16,17 @@ Members Only Project made from the [Odin Project's](https://www.theodinproject.c
 - Deployed on Railway
 
 ## Getting started
-
+1. Populate .env located in server with the following environmental variables:
+   - MONGODB_URI
+   - SESSION_SECRET
+2. Start the application
 ```
 git clone https://github.com/skim2264/Members-Only.git
-cd To-Do-List
+cd Members-Only
 npm install
-npm run start
+npm start
 ```
+3. Go to http://localhost:3000/ to access the website
 
 ## Features
 1. **Members-Only Access:** A secure clubhouse app where only registered members can access and engage with the content.
